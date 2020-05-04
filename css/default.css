@@ -1,0 +1,38 @@
+@charset "utf-8";
+body{
+    min-width:1200px;
+    margin:0;
+   /* font-family:"NotoSans", sans-serif;  /*따옴표 없이 뒤에 쓰는 건 앞에 쓴 폰트가 없을 때 뒤의 것을 대신 표시하라는 의미*/
+  font-family: 'Noto Sans KR', sans-serif;
+
+}
+h1, h2, h3, h4, h5, h6, p{
+    margin:0;
+    font-family: 'Nanum Myeongjo', serif;
+}
+ul{
+    margin:0;
+    padding:0;
+    list-style:none;
+}
+a{
+    text-decoration:none;
+    color:#333;
+}
+.inner{
+    width:1200px;
+    margin:0 auto;
+}
+.cf:after{
+    content:"";
+    display:block;
+    clear:both;
+}
+
+select{
+    appearance:none;
+    -webkit-appearance:none;
+}
+select::-ms-expand{      /*셀렉트는 익스플로러에서는 따로 취급해줘야 한다*/
+    display:none;
+}

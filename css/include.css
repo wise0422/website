@@ -1,0 +1,171 @@
+@charset "utf-8";
+
+/*header*/
+#header{
+    text-align:center;
+    height:80px;
+    line-height:80px;
+}
+
+#header h1{
+    position:absolute;
+    left:50px;
+    width:110px;
+    height:45px;
+    background:url(../images/sp_com.png) no-repeat -300px -5px;
+    text-indent:-9999px;
+    top:15px;
+}
+#header h1 a{
+    display:block;
+}
+
+.gnb{
+    display:inline-block;           /*부모 영역에 cf를 먹이지 않아도 li 다음에 오는 요소들이 뒤따라 float:left 되지 않는다 왜? 부모 영역이 블락요소로 바뀌었기 때문*/
+}
+.gnb li{
+    float:left;
+    padding:0 20px;
+    position:relative;
+}
+.gnb li:after{
+    content:"";
+    display:block;
+    width:60%;
+    height:1px;
+    background:#2d5b79;
+    position:absolute;
+    bottom:20px;                    /*보이는 화면 기준으로 bottom에서 20px 위치에 나옴*/
+    left:50%;                          /*그냥 띄우면 부모인 li의 왼쪽 패딩 때문에 제대로 위치잡지 못한다. 그렇기에 left값을 줘야 한다.*/
+    transform: translate(-50%) scale(0);  /*호버되기 전에 바꿀 것과 호버되고 나서 바꿀 것을 같이 썼다면 호버할 때 호버되기 전에 바꿀 것도 그대로 써줘야 한다*/ /*scale은 중앙에서부터 커지거나 작아짐...*/
+    transition:0.5s transform;      /*scale을 바꾸는 것도 기본 속성명인 transform을 써야 함*/
+}
+.gnb li:hover:after{
+    transform: translate(-50%) scale(1);
+}
+.gnb li:hover .lnb{
+    max-height:300px;
+    
+}
+.lnb{
+    position:absolute;
+    max-width:100%;
+    font-size:13px;
+    z-index:1;
+    line-height:40px;
+    background:#fff;
+    left:0;
+    max-height:0;
+    overflow:hidden;
+    transition:0.5s max-height;
+}
+.lnb li:after{
+    display:none;
+}
+
+.lnb li{    
+}
+.lnb li a{
+    display:block;
+    padding:0;
+}
+
+.lnb li a:hover{
+    background:#2d5b79;
+    color:#fff;
+}
+
+.utill{
+    position:absolute;
+    right:50px;
+    top:0px;
+    font-size:12px;
+}
+.utill li{
+    float:left;
+}
+
+.utill li:after{
+    content:"";
+    display:inline-block;
+    width:1px;
+    height:8px;
+    background:#999;
+    margin:0 5px;
+}
+.utill li:last-child:after{
+    display:none;
+}
+.utill li a{}
+
+/*footer*/
+#footer{}
+
+.fTop{
+    background:#383f43;
+    padding:10px 0;
+    height:40px;
+    line-height:40px;
+}
+.fMenu{}
+.fMenu li{
+    float:left;
+}
+.fMenu li::after{
+    content:"";
+    display:inline-block;
+    width:1px;
+    height:8px;
+    background:#ddd;
+    margin:0 5px;
+}
+.fMenu li:last-child::after{
+    display:none;
+}
+.fMenu li a{
+    color:#fff;
+}
+
+.fTopR{
+     float:right;
+}
+.fCs, .family{
+   float:left;
+    padding:0 10px;
+    height:40px;
+}
+.fCs{
+    color:#fff;
+    background:#292f32;
+    font-size:22px;
+    margin-right:10px;
+}
+.fCs span{
+    font-size:14px;
+    vertical-align:top;
+}
+.family{
+    width:150px;
+    background:#fff url(../images/arrow.jpg) no-repeat 90% center;
+
+}
+
+.fBottom{
+    background:#4c5459;
+    text-align:center;
+    color:#fff;
+    padding:50px 0;
+}
+.fLogo{
+    width:130px;
+    height:50px;
+    background:url(../images/sp_com.png) no-repeat -150px 0;
+    margin:0 auto;
+    text-indent:-9999px;
+    margin-bottom:20px;
+    font-size:13px;
+}
+.fBottom span{}
+.fBottom p{
+    margin-top:10px;
+}
